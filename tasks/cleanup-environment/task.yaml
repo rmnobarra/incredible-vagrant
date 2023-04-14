@@ -1,0 +1,13 @@
+name: cleanup-environment
+description: This tasks destroys vagrant environment
+supported-os:
+- windows
+- linux
+- mac
+requirements-check:
+  dependency-example:
+    check-command: vagrant version
+    info: vagrant is not installed
+command: 
+  linux: |
+    vagrant destroy -f
