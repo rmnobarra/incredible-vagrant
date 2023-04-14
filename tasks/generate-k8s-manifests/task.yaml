@@ -1,0 +1,20 @@
+name: generate-k8s-manifests
+description: Convert docker compose file into kubernetes manifests
+inputs:
+- label: Commit message
+  type: text
+  default: example
+  name: message
+  required: 'true'
+supported-os:
+- windows
+- linux
+- mac
+requirements-check:
+  dependency-example:
+    check-command: vagrant version
+    info: vagrant is not installed
+command: 
+  linux:
+    vagrant ssh -c 'kompose convert -f docker-compose.yaml'
+    vagrant ssh -c 'sudo kubectl apply -f .'
