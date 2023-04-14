@@ -10,5 +10,7 @@ requirements-check:
     info: vagrant is not installed
 command: 
   linux:
+    pwd
+    hostname
     vagrant ssh -c 'kompose convert -f docker-compose.yaml'
     vagrant ssh -c 'sudo kubectl apply -f .'
