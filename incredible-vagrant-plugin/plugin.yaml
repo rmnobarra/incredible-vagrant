@@ -1,0 +1,40 @@
+name: incredible-vagrant-plugin
+description: A very ultra mega complex but simple, incredible vagrant plugin for stackspot
+display-name: incredible-vagrant-plugin
+picture: plugin.png
+category: backend # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/plugin/#category
+compatibility:
+  - java
+  - spring
+about: docs/about.md
+usage: docs/usage.md
+use-case: docs/use-case.md
+implementation: docs/implementation.md
+technologies: # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/yaml/#technologies
+  - "Api"
+types:
+  - app
+inputs:
+  - label: Define language project
+    type: text
+    name: language
+    default: java
+    items:
+      - java
+      - python
+  - label: Start app container
+    type: bool
+    name: app_enabled
+    default: false
+  - label: Start postgres container
+    type: bool
+    name: postgres_enabled
+    default: false
+  - label: Start rabbitmq container
+    type: bool
+    name: rabbitmq_enabled
+    default: false
+  - label: Start mongodb container
+    type: bool
+    name: mongodb_enabled
+    default: true

@@ -1,0 +1,36 @@
+applied_templates:
+- inputs: {}
+  template_data_path: ''
+- inputs:
+    app_enabled: false
+    language: golang
+    mongodb_enabled: true
+    postgres_enabled: false
+    rabbitmq_enabled: false
+  template_data_path: ../incredible-vagrant-plugin
+- inputs:
+    app_enabled: false
+    language: python
+    mongodb_enabled: true
+    postgres_enabled: false
+    rabbitmq_enabled: false
+  template_data_path: ../incredible-vagrant-plugin
+- inputs:
+    app_enabled: false
+    language: java
+    mongodb_enabled: true
+    postgres_enabled: false
+    rabbitmq_enabled: false
+  template_data_path: ../incredible-vagrant-plugin
+- inputs:
+    app_enabled: false
+    language: java
+    mongodb_enabled: true
+    postgres_enabled: false
+    rabbitmq_enabled: false
+  template_data_path: ../incredible-vagrant-plugin
+global_computed_inputs: {}
+global_inputs: {}
+language: java
+stack: stack-spot
+stack_type: app

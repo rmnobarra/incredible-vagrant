@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+
+{% if app_enabled %}
+  app:
+    build: app/
+    container_name: app
+    environment:
+      DATABASE_URL: "jdbc:postgresql://postgres:5432/db"
+    depends_on:
+      - "postgres"
+    ports:
+      - 8080:8080    
+{% endif %}
+
+{% if postgres_enabled %}
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+{% endif %}
+
+{% if rabbitmq_enabled %}
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+{% endif %}
+
+{% if mongodb_enabled %}
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongodb
+      MONGO_INITDB_ROOT_PASSWORD: mongodb
+    volumes:
+      - mongodb-data:/data/db
+    ports:
+      - "27017:27017"
+{% endif %}
+
+volumes:
+{% if postgres_enabled %}
+  postgres-data:
+{% endif %}
+{% if mongodb_enabled %}
+  mongodb-data:
+{% endif %}
