@@ -1,5 +1,5 @@
-name: marvellous-terraform-task
-description: A simple but marvellous terraform task for stackspot
+name: incredible-vagrant-task
+description: A very ultra mega complex but simple, incredible vagrant task for stackspot
 supported-os:
 - windows
 - linux
@@ -10,4 +10,4 @@ requirements-check:
     info: vagrant is not installed
 command: 
   linux:
-    terraform up
+    vagrant up
