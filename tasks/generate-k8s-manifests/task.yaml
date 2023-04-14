@@ -9,7 +9,7 @@ requirements-check:
     check-command: vagrant version
     info: vagrant is not installed
 command: 
-  linux:
+  linux: |
     pwd
     hostname
     vagrant ssh -c 'kompose convert -f docker-compose.yaml'
