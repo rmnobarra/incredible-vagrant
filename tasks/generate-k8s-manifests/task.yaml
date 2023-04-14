@@ -13,4 +13,4 @@ command:
     pwd
     hostname
     vagrant ssh -c 'kompose convert -f project/docker-compose.yaml'
-    vagrant ssh -c 'sudo kubectl apply -f project/'
+    vagrant ssh -c 'sudo kubectl apply -f .'
